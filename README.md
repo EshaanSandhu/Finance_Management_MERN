@@ -47,10 +47,10 @@ vercel.json           # Configuration for Vercel deployment
 1. **Clone the repository:**
 
    ```bash
-   git clone <https://github.com/EshaanSandhu/Finance_Management_MERN>
+   git clone <https://github.com/EshaanSandhu/Finance_Management_MERN.git>
    ```
 
-   Replace `<https://github.com/EshaanSandhu/Finance_Management_MERN>` with the actual URL of your Git repository. For example:
+   Replace `<https://github.com/EshaanSandhu/Finance_Management_MERN.git>` with the actual URL of your Git repository. For example:
 
    ```bash
    git clone [https://github.com/EshaanSandhu/expense-tracker.git](https://github.com/EshaanSandhu/expense-tracker.git)
