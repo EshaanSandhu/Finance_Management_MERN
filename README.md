@@ -1,77 +1,175 @@
-# Finance_Management
+# Finance Management Application (MERN Stack)
 
-This project currently contains frontend only in React
+This project is a full-stack web application for managing personal finances, built using the MERN stack (MongoDB, Express.js, React.js, Node.js).
 
-## Project Structure
+## Table of Contents
 
-public/
-├── favicon.ico         # Website favicon
-├── index.html         # Main HTML file
-├── logo192.png        # Logo for manifest (192x192)
-├── logo512.png        # Logo for manifest (512x512)
-├── manifest.json      # Web app manifest for PWA
-└── robots.txt         # Robots.txt for search engine crawlers
+* [Features](#features)
+* [Technologies Used](#technologies-used)
+* [Getting Started](#getting-started)
+    * [Prerequisites](#prerequisites)
+    * [Installation](#installation)
+    * [Environment Variables](#environment-variables)
+    * [Running the Application](#running-the-application)
+* [Project Structure](#project-structure)
+* [Usage](#usage)
 
-src/
-├── pages/             # Contains different pages/components of the application
-│   ├── ExpenseDetails.css        # Styles for the Expense Details component
-│   ├── ExpenseDetails.js         # Component to display details of a expense such as income,expense and balance
-│   ├── ExpensesTable.css         # Styles for the Expenses Table component
-│   ├── ExpensesTable.js          # Component to display a table of expenses
-│   ├── ExpenseTrackerForm.css    # Styles for the Expense Tracker Form component
-│   ├── ExpenseTrackerForm.js     # Component for adding expenses
-│   ├── Home.css                  # Styles for the Home page
-│   ├── Home.js                   # Home page component
-│   ├── Login.css                 # Styles for the Login page
-│   ├── Login.js                  # Login page component
-│   ├── Signup.css                # Styles for the Signup page
-│   ├── Signup.js                 # Signup page component
-│── App.css                   # Styles for the main App component
-│── App.js                    # Main App component
-│── App.test.js               # Unit tests for App component
-│── index.css                 # Global styles or styles for the index page
-│── index.js                  # Entry point for the application
-├── logo.svg           # SVG logo
-├── RefrshHandler.js   # (Description of what this file does - e.g., handles token refresh)
-├── reportWebVitals.js # Reports performance metrics
-├── setupTests.js      # Setup for testing environment
-└── utils.js           # Utility functions
+## Features
 
-package-lock.json      # Dependency lock file
-package.json           # Project dependencies and scripts
-README.md              # This file
-vercel.json           # Configuration for Vercel deployment
+* **User Authentication:** Secure user registration and login.
+* **Expense Tracking:** Add and delete expense records.
+* **Responsive Design:** Accessible on various devices.
+
+## Technologies Used
+
+* **Frontend:**
+    * React.js
+    * Axios (for API requests)
+    * React Router (for routing)
+    * Bootstrap (for UI components)
+    * CSS3(for styling)
+* **Backend:**
+    * Node.js
+    * Express.js
+    * MongoDB (with Mongoose)
+    * JSON Web Tokens (JWT) (for authentication)
+    * Bcrypt (for password hashing)
+    * NodeMon (for speedy development)
+    * Dotenv (for environment variables)
+* **Database:**
+    * MongoDB Atlas
 
 ## Getting Started
 
-1. **Clone the repository:**
+### Prerequisites
 
-   ```bash
-   git clone <https://github.com/EshaanSandhu/Finance_Management_MERN.git>
-   ```
+* Node.js (>= 14.x)
+* npm or Yarn
+* MongoDB (local or cloud instance like MongoDB Atlas)
 
-   Replace `<https://github.com/EshaanSandhu/Finance_Management_MERN.git>` with the actual URL of your Git repository. For example:
+### Installation
 
-   ```bash
-   git clone [https://github.com/EshaanSandhu/expense-tracker.git](https://github.com/EshaanSandhu/expense-tracker.git)
-   ```
+1.  **Clone the repository:**
 
-2. **Navigate to the project directory:**
+    ```bash
+    git clone [repository-url]
+    cd [repository-name]
+    ```
 
-   ```bash
-   cd expense-tracker
-   ```
+2.  **Install backend dependencies:**
 
-3. **Install dependencies:**
+    ```bash
+    cd backend
+    npm install
+    ```
 
-   ```bash
-   npm install  # or yarn install
-   ```
+3.  **Install frontend dependencies:**
 
-4. **Run the development server:**
+    ```bash
+    cd ../frontend
+    npm install
+    ```
 
-   ```bash
-   npm start  # or yarn start
-   ```
+### Environment Variables
 
-   This will start the application in development mode. Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
+1.  **Create a `.env` file in the `backend` directory.**
+2.  **Add the following environment variables:**
+
+    ```
+    PORT=8080 # Or any other port
+    MONGO_CONN="mongodb+srv://<username>:<password>@<cluster-url>/<database-name>"
+    JWT_SECRET="secret-123"
+    ```
+
+    * Replace `<username>`, `<password>`, `<cluster-url>`, and `<database-name>` with your MongoDB Atlas credentials.
+
+3.  **Create a `.env` file in the `frontend` directory.**
+4.  **Add the following environment variable:**
+
+    ```
+    REACT_APP_API_URL="http://localhost:8080" # Adjust if your backend runs on a different port or domain.
+    ```
+
+### Running the Application
+
+1.  **Start the backend server:**
+
+    ```bash
+    cd ../backend
+    npm run dev
+    ```
+
+2.  **Start the frontend development server:**
+
+    ```bash
+    cd ../frontend
+    npm start
+    ```
+
+    The application will be accessible at `http://localhost:8080`.
+
+## Project Structure
+
+Finanace_Managemant_MERN/
+├── backend/
+│   ├── Controllers/
+│   │   ├── AuthController.js
+│   │   ├── ExpesnseController.js
+│   ├── Models/
+│   │   ├── user.js
+│   │   ├── db.js
+│   ├── Routes/
+│   │   ├── AuthRouter.js
+│   │   ├── ExpenseRouter.js
+│   │   ├── ProductRouter.js
+│   ├── Middlewares/
+│   │   ├── Auth.js
+│   │   ├── AuthValidation.js
+│   ├── index.js
+│   ├── package.json
+│   └── .env
+│   ├── vercel.json
+│   └── package-lock.json
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── ExpenseDetails.css
+│   │   │   ├── ExpenseDetails.js
+│   │   │   ├── ExpensesTable.css
+│   │   │   ├── ExpensesTable.js
+│   │   │   ├── ExpenseTrackerForm.js
+│   │   │   ├── ExpenseTrackerForm.css
+│   │   │   ├── Home.css
+│   │   │   ├── Home.js
+│   │   │   ├── Login.css
+│   │   │   ├── Login.js
+│   │   │   ├── Signup.css
+│   │   │   ├── Signup.js
+│   │   ├── App.css
+│   │   ├── App.js
+│   │   ├── App.test.js
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   ├── logo.svg
+│   │   ├── RefrshHandler.js
+│   │   ├── reportWebVitals.js
+│   │   ├── setupTests.js
+│   │   ├── utils.js
+│   ├── public/
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   ├── robots.txt
+│   │   ├── logo192.png
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   ├── package.json
+│   ├── README.md
+│   ├── package-lock.json
+│   ├── vercel.json
+│   └── .env
+├── README.md
+
+## Usage
+
+1.  **Register or log in to your account.**
+2.  **Add expense records.**
